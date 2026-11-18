@@ -4,6 +4,10 @@ English | [**한국어**](README.ko.md)
 
 Retro games in the Orca sidebar: Tetris, Ladder, Snake, and Minesweeper. Rules follow herdr-tetris.
 
+Press F1 and a new world opens.
+
+![Four games in the Orca sidebar](docs/store/store-screenshots.png)
+
 ## Features
 
 - Four games, switched with the number keys 1–4. An unfinished game is kept when you switch away.
