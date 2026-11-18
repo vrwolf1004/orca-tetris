@@ -32,6 +32,26 @@
       "path": "docs/store/store-screenshots.webp",
       "alt": "Tetris, Ladder, Snake and Minesweeper panels side by side",
       "caption": "Four games in the Orca sidebar"
+    },
+    {
+      "path": "docs/store/land-tetris.webp",
+      "alt": "Tetris game screen",
+      "caption": "Tetris in the Orca sidebar"
+    },
+    {
+      "path": "docs/store/land-ladder.webp",
+      "alt": "Ladder game screen",
+      "caption": "Ladder in the Orca sidebar"
+    },
+    {
+      "path": "docs/store/land-snake.webp",
+      "alt": "Snake game screen",
+      "caption": "Snake in the Orca sidebar"
+    },
+    {
+      "path": "docs/store/land-minesweeper.webp",
+      "alt": "Minesweeper game screen",
+      "caption": "Minesweeper in the Orca sidebar"
     }
   ]
 }
