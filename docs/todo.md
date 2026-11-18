@@ -23,6 +23,7 @@ herdr-tetris 에는 게임이 여러 개 있습니다. 이 플러그인은 테�
 
 - [x] 매니페스트 `description` 을 영문으로 바꿈
 - [x] 스토어 이미지: `docs/store/store-cover.webp`(1600×1000), `docs/store/store-screenshots.webp`(2560×1600). 게임 화면으로 캡처 (모니터 화면 제외)
+- [x] 매니페스트에 `cover`, `screenshots` 추가 (스크린샷은 1280×800 이상 가로형이어야 해서 4개 게임 합성본 1장만 넣음. 게임별 세로 캡처는 빠짐)
 - [ ] icon 512×512 (아직 없음)
 - [ ] GitHub 저장소 만들고 `orca-plugin` 토픽 추가, 태그 `v0.5.0`
 - [ ] 목록 상태 페이지 확인

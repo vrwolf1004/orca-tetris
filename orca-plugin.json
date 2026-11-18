@@ -6,13 +6,32 @@
   "description": "Retro Tetris, Ladder, Snake and Minesweeper games in the Orca sidebar.",
   "license": "MIT",
   "repository": "https://github.com/vrwolf1004/orca-tetris",
-  "author": { "name": "vrwolf1004" },
-  "engines": { "orca": ">=1.4.246" },
+  "author": {
+    "name": "vrwolf1004"
+  },
+  "engines": {
+    "orca": ">=1.4.246"
+  },
   "execution": "sandboxed-ui",
   "contributes": {
     "panels": [
-      { "id": "tetris", "title": "Tetris", "entry": "panel/index.html" }
+      {
+        "id": "tetris",
+        "title": "Tetris",
+        "entry": "panel/index.html"
+      }
     ]
   },
-  "capabilities": []
+  "capabilities": [],
+  "cover": {
+    "path": "docs/store/store-cover.webp",
+    "alt": "Tetris for Orca: a Tetris board next to the title"
+  },
+  "screenshots": [
+    {
+      "path": "docs/store/store-screenshots.webp",
+      "alt": "Tetris, Ladder, Snake and Minesweeper panels side by side",
+      "caption": "Four games in the Orca sidebar"
+    }
+  ]
 }
