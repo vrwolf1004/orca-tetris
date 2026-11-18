@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tetris</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="monitor" class="monitor" hidden>
+    <div class="monitor-head">SYSTEM MONITOR · ops-node-07 · ap-northeast-2 · v4.2.1</div>
+    <pre id="monitor-rows" class="monitor-rows"></pre>
+    <pre id="monitor-logs" class="monitor-logs"></pre>
+  </div>
+  <div id="game-screen">
+    <div id="hud" class="hud"><span id="score-label" data-i18n="score">SCORE</span> <b id="score">0</b></div>
+    <div class="stage">
+    <div class="game" tabindex="0" id="game">
+      <div class="side">
+        <div class="panel-name" data-i18n="game_tetris">테트리스</div>
+        <div class="stat"><span data-i18n="lines">줄</span><b id="lines">0</b></div>
+        <div class="stat"><span data-i18n="level">레벨</span><b id="level">1</b></div>
+        <div class="next-label" data-i18n="next">다음</div>
+        <canvas id="next" width="64" height="64"></canvas>
+        <div class="side-keys" data-i18n="hint_side">Ctrl+H 도움말
+1-4 · F1</div>
+      </div>
+      <div class="board-wrap">
+        <canvas id="board" width="280" height="398"></canvas>
+        <div class="board-score"><span data-i18n="score">SCORE</span> <b id="board-score">0</b></div>
+        <div id="overlay" class="overlay" hidden>
+          <div id="overlay-text" data-i18n="game_over">GAME OVER</div>
+          <div class="hint" data-i18n="restart_hint">R: 다시 시작</div>
+        </div>
+      </div>
+    </div>
+    <div id="text-game" class="text-game" hidden>
+      <div class="field-wrap">
+        <canvas id="field"></canvas>
+        <div id="field-hud" class="board-score"><span id="field-label" data-i18n="pick">PICK</span> <b id="field-score">-</b></div>
+        <div id="field-overlay" class="overlay" hidden>
+          <div id="field-overlay-text"></div>
+          <div class="hint" data-i18n="restart_hint">R: 다시 시작</div>
+        </div>
+      </div>
+      <div id="text-side" class="side">
+        <div id="panel-name" class="panel-name"></div>
+        <pre id="info" class="info"></pre>
+        <div class="side-keys" data-i18n="hint_side">Ctrl+H 도움말
+1-4 · F1</div>
+      </div>
+      <div id="box-keys" class="keys" data-i18n="hint_long">Ctrl+H 도움말 · F2 언어 · 1-4 게임 · F1 모니터</div>
+    </div>
+    </div>
+    <div class="controls">
+      <button id="restart" type="button" class="arcade" data-i18n="restart">RESTART</button>
+      <button id="pause" type="button" class="arcade" data-i18n="pause">PAUSE</button>
+    </div>
+    <div id="status" class="status"></div>
+  </div>
+  <div id="help" class="help" hidden>
+    <div class="help-box">
+      <pre id="help-text"></pre>
+      <div class="keys" data-i18n="help_common">F2 언어 · 1-4 게임 · F1 모니터</div>
+      <div class="keys" data-i18n="help_close">Ctrl+H 또는 Esc 로 닫기</div>
+    </div>
+  </div>
+
+  <script type="module" src="../src/panel.ts"></script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+/* 레트로 패널. 색은 panel.ts 의 THEMES 가 아래 변수로 넣는다. 기본값은 테트리스 팔레트다. */
+:root {
+  --chrome: #0b0b2b;
+  --field: #000000;
+  --fg: #ffffff;
+  --accent: #fcfc00;
+  --dim: #5c5c9c;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; background: var(--chrome); color: var(--fg); font-family: Consolas, "Malgun Gothic", monospace; }
+/* 스캔라인: 화면 전체에 옅은 줄무늬를 올린다 */
+body::after { content: ""; position: fixed; inset: 0; pointer-events: none; background: repeating-linear-gradient(to bottom, rgba(0, 0, 0, 0.18) 0 1px, transparent 1px 3px); }
+
+.hud { display: flex; justify-content: flex-end; gap: 6px; padding: 10px 14px 0; font-size: 14px; }
+.hud[hidden] { display: none; }
+.hud span { color: var(--dim); }
+.hud b { color: var(--accent); }
+
+.stage { display: flex; align-items: center; justify-content: center; height: 476px; margin-top: 8px; } /* 476 = 사다리 상자(캔버스 422 + 여백 20 + 테두리 6 + 조작 안내 26), 가장 큰 상자 높이 */
+.game { display: flex; gap: 10px; margin: 0; width: 380px; box-sizing: border-box; padding: 10px; border: 3px solid var(--fg); background: var(--chrome); outline: none; }
+.game:focus-visible { outline: 2px dashed var(--accent); }
+.game[hidden] { display: none; }
+.side { width: 64px; font-size: 12px; }
+.panel-name { margin-bottom: 8px; padding-bottom: 4px; border-bottom: 2px solid var(--dim); color: var(--accent); font-size: 14px; font-weight: bold; text-align: center; }
+.stat { display: flex; justify-content: space-between; margin-bottom: 6px; }
+.stat span { color: var(--dim); }
+.stat b { font-size: 13px; }
+.next-label { margin: 8px 0 4px; color: var(--dim); }
+#next { background: var(--field); width: 64px; height: 64px; }
+.board-wrap { position: relative; }
+.board-score { position: absolute; top: 4px; right: 6px; font-size: 12px; color: var(--dim); }
+.board-score b { color: var(--accent); }
+#board { display: block; background: var(--field); }
+.overlay { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; background: rgba(0, 0, 0, 0.75); }
+.overlay[hidden] { display: none; }
+#overlay-text { font-size: 18px; font-weight: bold; }
+.hint { margin-top: 6px; font-size: 12px; color: var(--dim); }
+
+.text-game { position: relative; display: flex; gap: 10px; justify-content: center; width: 380px; box-sizing: border-box; padding-bottom: 26px; padding: 10px; border: 3px solid var(--fg); background: var(--chrome); }
+.text-game[hidden] { display: none; }
+.field-wrap { position: relative; }
+.text-game #field { display: block; background: var(--field); }
+.text-game .side { width: 64px; }
+.info { margin: 0; font-size: 12px; line-height: 1.5; white-space: pre; color: var(--fg); }
+
+.controls { display: flex; gap: 12px; justify-content: flex-end; padding: 0 14px; margin-top: 12px; }
+/* 오락실 버튼: 둥근 조작 버튼, 누르면 아래로 눌리는 그림자 */
+.arcade { width: 66px; height: 66px; margin: 5px; border: 0; border-radius: 50%; color: #fff; font: bold 10px Consolas, monospace; letter-spacing: 0.5px; text-shadow: 0 1px 0 #000; cursor: pointer;
+  background: radial-gradient(circle at 50% 40%, var(--btn) 0 58%, rgba(0, 0, 0, 0.4) 100%);
+  /* 금속 테두리 두 겹 + 안쪽으로 파인 그림자: 항상 반쯤 눌린 상태 */
+  box-shadow: 0 0 0 4px #1a1a1a, 0 0 0 5px #5a5a5a, inset 0 6px 10px rgba(0, 0, 0, 0.55);
+  transform: translateY(5px); transition: transform 0.05s, box-shadow 0.05s; }
+.arcade:active { transform: translateY(7px); box-shadow: 0 0 0 4px #1a1a1a, 0 0 0 5px #5a5a5a, inset 0 9px 14px rgba(0, 0, 0, 0.75); }
+#restart { --btn: #e53935; }
+#pause { --btn: #1e88e5; }
+.status { margin-top: 8px; text-align: center; font-size: 12px; color: var(--accent); }
+.keys { margin-top: 6px; text-align: center; font-size: 11px; color: var(--dim); }
+#box-keys { position: absolute; left: 0; right: 0; bottom: 6px; margin: 0; }
+.side { position: relative; }
+.side-keys { position: absolute; left: 0; bottom: 0; white-space: pre-line; font-size: 9px; line-height: 1.5; color: var(--dim); }
+
+/* 도움말 팝업: 화면을 어둡게 덮고 가운데에 띄운다 */
+.help { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(0, 0, 0, 0.6); }
+.help[hidden] { display: none; }
+.help-box { min-width: 320px; padding: 14px 18px; border: 3px solid var(--fg); background: var(--chrome); color: var(--fg); }
+.help-box pre { margin: 0 0 10px; font: inherit; font-size: 12px; line-height: 1.7; white-space: pre-wrap; }
+
+.monitor { margin: 12px 12px 0; padding: 10px; border: 3px solid var(--fg); background: var(--field); font-size: 12px; overflow: hidden; }
+.monitor[hidden] { display: none; }
+.monitor-head { color: var(--dim); margin-bottom: 8px; }
+.monitor pre { margin: 0; white-space: pre; color: var(--fg); }
+.monitor-rows { margin-bottom: 8px; }
+.monitor-logs { color: var(--dim); height: 12em; line-height: 1.2; overflow: hidden; }
