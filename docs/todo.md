@@ -21,8 +21,8 @@ herdr-tetris 에는 게임이 여러 개 있습니다. 이 플러그인은 테�
 
 ## 배포
 
-- [ ] 매니페스트 `description` 을 영문으로 바꾸기
+- [x] 매니페스트 `description` 을 영문으로 바꿈
 - [x] 스토어 이미지: `docs/store/store-cover.png`(1600×1000), `docs/store/store-screenshots.png`(2560×1600). 게임 화면으로 캡처 (모니터 화면 제외)
 - [ ] icon 512×512 (아직 없음)
-- [ ] GitHub 저장소 만들고 `orca-plugin` 토픽 추가, 태그 `v0.1.0`
+- [ ] GitHub 저장소 만들고 `orca-plugin` 토픽 추가, 태그 `v0.5.0`
 - [ ] 목록 상태 페이지 확인

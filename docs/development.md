@@ -30,6 +30,8 @@ node --test tests/game.test.ts tests/games.test.ts
 "$ORCA" plugin shot <플러그인 키> --panel tetris --out <png 경로>
 ```
 
+HTML 패널은 `--act`(키 입력)를 쓸 수 없습니다. 게임 상태별 캡처는 같은 패널 코드를 Chrome 에서 띄우고 키를 눌러 찍었습니다(`docs/store/`).
+
 플러그인 키는 `"$ORCA" plugin list`에서 확인합니다.
 
 ## 5. 로그
