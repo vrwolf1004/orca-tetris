@@ -53,5 +53,6 @@
       "alt": "Minesweeper game screen",
       "caption": "Minesweeper in the Orca sidebar"
     }
-  ]
+  ],
+  "icon": "docs/store/icon.webp"
 }
