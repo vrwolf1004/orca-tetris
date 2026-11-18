@@ -43,7 +43,7 @@ body::after { content: ""; position: fixed; inset: 0; pointer-events: none; back
 .text-game .side { width: 64px; }
 .info { margin: 0; font-size: 12px; line-height: 1.5; white-space: pre; color: var(--fg); }
 
-.controls { display: flex; gap: 12px; justify-content: flex-end; padding: 0 14px; margin-top: 12px; }
+.controls { display: flex; align-items: center; gap: 12px; justify-content: flex-end; width: 380px; margin: 12px auto 0; }
 /* 오락실 버튼: 둥근 조작 버튼, 누르면 아래로 눌리는 그림자 */
 .arcade { width: 66px; height: 66px; margin: 5px; border: 0; border-radius: 50%; color: #fff; font: bold 10px Consolas, monospace; letter-spacing: 0.5px; text-shadow: 0 1px 0 #000; cursor: pointer;
   background: radial-gradient(circle at 50% 40%, var(--btn) 0 58%, rgba(0, 0, 0, 0.4) 100%);
@@ -53,6 +53,18 @@ body::after { content: ""; position: fixed; inset: 0; pointer-events: none; back
 .arcade:active { transform: translateY(7px); box-shadow: 0 0 0 4px #1a1a1a, 0 0 0 5px #5a5a5a, inset 0 9px 14px rgba(0, 0, 0, 0.75); }
 #restart { --btn: #e53935; }
 #pause { --btn: #1e88e5; }
+.coin { display: flex; align-items: flex-end; gap: 6px; margin-right: auto; cursor: pointer; }
+.coin .machine { transition: transform 0.08s; }
+.coin:active .machine { transform: scale(0.96); }
+/* 클릭하면 동전이 슬롯으로 들어가고 손잡이가 한 바퀴 돈다 */
+.coin.insert #token { animation: coin-drop 0.7s ease-in forwards; }
+.coin.insert #knob { transform-box: fill-box; transform-origin: center; animation: knob-turn 0.5s ease-out; }
+@keyframes coin-drop {
+  0% { opacity: 1; transform: translateY(-6px); }
+  60% { opacity: 1; transform: translateY(14px); }
+  100% { opacity: 0; transform: translateY(18px); }
+}
+@keyframes knob-turn { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
 .status { margin-top: 8px; text-align: center; font-size: 12px; color: var(--accent); }
 .keys { margin-top: 6px; text-align: center; font-size: 11px; color: var(--dim); }
 #box-keys { position: absolute; left: 0; right: 0; bottom: 6px; margin: 0; }

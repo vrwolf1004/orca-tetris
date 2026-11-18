@@ -51,6 +51,7 @@ const hudLabel = byId<HTMLElement>('score-label')
 const hud$ = byId<HTMLElement>('hud')
 const textSide$ = byId<HTMLElement>('text-side')
 const boxKeys$ = byId<HTMLElement>('box-keys')
+const coin$ = byId<HTMLElement>('coin')
 const panelNameEl = byId<HTMLElement>('panel-name')
 const fieldHud$ = byId<HTMLElement>('field-hud')
 const fieldLabelEl = byId<HTMLElement>('field-label')
@@ -127,7 +128,7 @@ function applyLocale(): void {
   }
   pauseBtn.textContent = paused ? t('resume') : t('pause')
   if (current === 'tetris' && started) {
-    setStatus(game.gameOver ? t('status_game_over') : paused ? t('status_paused') : t('status_playing'))
+    setStatus(game.gameOver ? t('status_game_over') : paused ? t('status_paused') : '')
   }
   if (helpOpen) helpText.textContent = t(HELP_KEY[current])
   render()
@@ -482,7 +483,7 @@ function restart(): void {
   started = true
   acc = 0
   pauseBtn.textContent = t('pause')
-  setStatus(t('status_playing'))
+  setStatus('')
   render()
 }
 
@@ -502,7 +503,7 @@ function togglePause(): void {
   if (!started || game.gameOver) return
   paused = !paused
   pauseBtn.textContent = paused ? t('resume') : t('pause')
-  setStatus(paused ? t('status_paused') : t('status_playing'))
+  setStatus(paused ? t('status_paused') : '')
 }
 
 function act(fn: () => unknown): void {
@@ -601,6 +602,12 @@ window.addEventListener('keydown', (event) => {
 restartBtn.addEventListener('click', restartCurrent)
 pauseBtn.addEventListener('click', togglePause)
 game$.addEventListener('click', () => game$.focus())
+// 동전 투입구 연출: 클래스를 지웠다 다시 붙여서 클릭할 때마다 애니메이션을 처음부터 재생한다.
+coin$.addEventListener('click', () => {
+  coin$.classList.remove('insert')
+  void coin$.offsetWidth
+  coin$.classList.add('insert')
+})
 
 // 중력과 틱: 테트리스는 game.tickSeconds, 스네이크는 snake.interval() 마다 한 칸 움직인다.
 // 일시정지, 게임 오버, 모니터, 도움말 팝업에서는 멈춘다.
