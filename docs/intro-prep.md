@@ -50,7 +50,7 @@
 
 ## 6. 소개글 초안 구성 (orca-tetris)
 
-1. 한 줄 소개 (영문, 매니페스트 `description` 에도 같은 문장을 쓴다): "Retro Tetris, Ladder, Snake and Minesweeper games in the Orca sidebar."
+1. 한 줄 소개 (영문, 매니페스트 `description` 에도 같은 문장을 쓴다): "Press F1 and a new world opens. Retro Tetris, Ladder, Snake and Minesweeper games in the Orca sidebar."
 2. 주요 기능: 게임 4종(테트리스, 사다리, 스네이크, 지뢰찾기), 레트로 팔레트, 도움말 팝업(Ctrl+H), 7개 언어(F2로 변경), 모니터 화면(F1)
 3. 조작법: 숫자 키 1~4 게임 전환, F1 모니터, F2 언어, Ctrl+H 도움말, R 다시 시작, 화살표와 Space(테트리스), WASD(스네이크, 지뢰찾기)
 4. 요구 사항: Orca 1.4.246 이상. 별도 프로그램 불필요
@@ -67,5 +67,5 @@ Press F1 and a new world opens.
 - 저장소는 아직 공개로 만들지 않았고, 커밋도 하지 않은 상태입니다.
 - 준비할 것:
   - 이미지: `docs/store/store-cover.webp`(1600×1000)와 `docs/store/store-screenshots.webp`(2560×1600) 는 만들었음. icon 512×512 는 아직 없음
-  - 저장소 생성, 토픽 `orca-plugin`, 태그 `v0.5.2`
+  - 저장소 생성, 토픽 `orca-plugin`, 태그 `v0.5.3`
 - 자세한 할 일은 `docs/todo.md` 를 보세요.

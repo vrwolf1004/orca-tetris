@@ -2,8 +2,8 @@
   "manifestVersion": 2,
   "id": "tetris-for-orca",
   "name": "Tetris for Orca",
-  "version": "0.5.2",
-  "description": "Retro Tetris, Ladder, Snake and Minesweeper games in the Orca sidebar.",
+  "version": "0.5.3",
+  "description": "Press F1 and a new world opens. Retro Tetris, Ladder, Snake and Minesweeper games in the Orca sidebar.",
   "license": "MIT",
   "repository": "https://github.com/vrwolf1004/orca-tetris",
   "author": {
