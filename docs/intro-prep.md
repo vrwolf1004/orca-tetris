@@ -66,6 +66,6 @@ Press F1 and a new world opens.
 - 키 조작은 **Orca 안에서 실제로 눌러 본 적이 없습니다.** 가짜 DOM 으로 흐름만 확인했습니다. 소개글을 쓰기 전에 조작과 화면을 확인해야 합니다.
 - 저장소는 아직 공개로 만들지 않았고, 커밋도 하지 않은 상태입니다.
 - 준비할 것:
-  - 이미지: `docs/store/store-cover.png`(1600×1000)와 `docs/store/store-screenshots.png`(2560×1600) 는 만들었음. icon 512×512 는 아직 없음
+  - 이미지: `docs/store/store-cover.webp`(1600×1000)와 `docs/store/store-screenshots.webp`(2560×1600) 는 만들었음. icon 512×512 는 아직 없음
   - 저장소 생성, 토픽 `orca-plugin`, 태그 `v0.5.0`
 - 자세한 할 일은 `docs/todo.md` 를 보세요.

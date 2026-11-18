@@ -6,7 +6,7 @@ Orca 사이드바에서 하는 레트로 게임 모음입니다. 테트리스, �
 
 F1을 누르면 새로운 세상이 열립니다.
 
-![Orca 사이드바의 게임 4종](docs/store/store-screenshots.png)
+![Orca 사이드바의 게임 4종](docs/store/store-screenshots.webp)
 
 ## 기능
 
