@@ -41,7 +41,7 @@ F1을 누르면 새로운 세상이 열립니다.
 ## 개발
 
 ```text
-node --test tests/game.test.ts tests/games.test.ts
+node --test tests/game.test.ts tests/games.test.ts tests/i18n.test.ts
 orca plugin dev load .
 ```
 
@@ -49,7 +49,7 @@ orca plugin dev load .
 
 ## 알려진 제한
 
-- Orca 안에서 키 입력과 화면 배치는 아직 확인하지 않았습니다. 개발 폴더 캡처는 초기 버전만 찍었습니다.
+- Orca 에서 키와 화면은 확인했습니다. 단 F2(언어 변경)는 Orca 에서 아직 누르지 않았고, 동전 연출은 브라우저에서만 확인했습니다.
 - 일부 호스트 단축키가 패널보다 먼저 키를 받을 수 있습니다(테스트 중 Ctrl+T 는 터미널을 열었습니다).
 - 번역은 원어민 검토를 받지 않았습니다.
 - 모니터의 CPU, 메모리 값은 표시하지 않습니다. 모니터는 가짜 대시보드입니다.

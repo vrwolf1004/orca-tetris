@@ -7,7 +7,7 @@ ORCA="C:\Users\PC\AppData\Local\Programs\orca\resources\bin\orca.exe"
 ## 1. 규칙 테스트
 
 ```text
-node --test tests/game.test.ts tests/games.test.ts
+node --test tests/game.test.ts tests/games.test.ts tests/i18n.test.ts
 ```
 
 ## 2. 매니페스트 검증
@@ -50,7 +50,7 @@ HTML 패널은 `--act`(키 입력)를 쓸 수 없습니다. 게임 상태별 캡
 
 | 항목 | 상태 |
 | --- | --- |
-| 규칙 단위 테스트 (10개) | 통과 |
+| 테스트 (12개: 규칙 10, 번역 2) | 통과 |
 | 매니페스트 검증 | 통과 |
 | TypeScript 타입체크 (strict, `src/panel.ts`) | 통과 |
 | 개발 폴더 로드, 패널 캡처 | 초기 버전만 확인. 이후 변경은 캡처하지 않음 |

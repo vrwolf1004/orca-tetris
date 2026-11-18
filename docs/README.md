@@ -14,6 +14,6 @@ Orca 사이드바에서 하는 레트로 게임 모음입니다(테트리스, �
 ## 현재 상태 한눈에
 
 - 게임 4종, 모니터 화면, 도움말 팝업(Ctrl+H), 언어 7종(F2 로 변경)이 구현되어 있습니다.
-- 규칙 단위 테스트 10개가 통과합니다(`node --test tests/game.test.ts tests/games.test.ts`).
+- 테스트 12개가 통과합니다(`node --test tests/game.test.ts tests/games.test.ts tests/i18n.test.ts`).
 - 매니페스트 검증과 strict 타입체크가 통과합니다.
 - Orca 안에서 키 조작과 화면 배치는 아직 확인하지 않았습니다. 자세한 내용은 status.md 를 보세요.

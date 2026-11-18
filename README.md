@@ -15,6 +15,8 @@ Press F1 and a new world opens.
 - Ladder (Amidakuji path finder), Snake, and Minesweeper.
 - A monitor screen (F1) that you see first. It is a fake dashboard.
 - Help popup (Ctrl+H) that explains each game's controls.
+- A coin slot under the buttons: click it to see a coin drop in.
+- Tetris waits for your first key before the blocks start falling.
 - Seven languages: Korean, English, Japanese, German, Spanish, French, Russian. The language follows your browser; press F2 to change it.
 
 ## Controls
@@ -41,7 +43,7 @@ Click the panel once to focus it before using the keys.
 ## Development
 
 ```text
-node --test tests/game.test.ts tests/games.test.ts
+node --test tests/game.test.ts tests/games.test.ts tests/i18n.test.ts
 orca plugin dev load .
 ```
 
@@ -49,7 +51,7 @@ See [docs/](docs/README.md) for rules, structure, development, status, and todo.
 
 ## Known limitations
 
-- Key input and layout have not been checked inside Orca yet. The development build was only captured at an early stage.
+- Keys and screens were checked inside Orca, except F2 (language), which has not been pressed in Orca yet. The coin animation was checked in a browser only.
 - Some host shortcuts may catch keys before the panel (Ctrl+T opened a terminal during testing).
 - Translations were written without native review.
 - Herdr-tetris's monitor system stats (CPU, memory) are not shown. The monitor is a fake dashboard.

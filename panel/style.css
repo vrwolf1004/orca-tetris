@@ -83,3 +83,8 @@ body::after { content: ""; position: fixed; inset: 0; pointer-events: none; back
 .monitor pre { margin: 0; white-space: pre; color: var(--fg); }
 .monitor-rows { margin-bottom: 8px; }
 .monitor-logs { color: var(--dim); height: 12em; line-height: 1.2; overflow: hidden; }
+/* 움직임을 줄이는 설정이면 동전 연출을 끈다 */
+@media (prefers-reduced-motion: reduce) {
+  .coin.insert #token, .coin.insert #knob { animation: none; }
+  .coin .machine { transition: none; }
+}

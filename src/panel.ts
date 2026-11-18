@@ -176,7 +176,7 @@ function renderTetris(): void {
       if (kind) drawCell(boardCtx, c, r, BLOCK_COLORS[kind], BOARD_CELL_W, BOARD_CELL_H)
     }
   }
-  if (!game.gameOver) {
+  if (started && !game.gameOver) {
     for (const [r, c] of game.activeCells()) {
       if (r >= 0) drawCell(boardCtx, c, r, BLOCK_COLORS[game.kind], BOARD_CELL_W, BOARD_CELL_H)
     }
