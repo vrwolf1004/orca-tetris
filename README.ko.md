@@ -57,3 +57,9 @@ orca plugin dev load .
 ## 라이선스
 
 MIT. [LICENSE](LICENSE) 를 보세요.
+
+## 프로젝트 후원
+
+이 프로젝트가 도움이 되었다면 개발자에게 커피 한 잔 후원을 고려해 주세요.
+
+[![Support on Ko-fi](https://img.shields.io/badge/Ko--fi-Support-FF5E5B?style=for-the-badge&logo=buymeacoffee&logoColor=white)](https://ko-fi.com/dev_ohyt)
